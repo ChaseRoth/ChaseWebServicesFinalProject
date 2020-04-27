@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChaseWebServicesFinalProject.Android", "ChaseWebServicesFinalProject\ChaseWebServicesFinalProject.Android\ChaseWebServicesFinalProject.Android.csproj", "{4952EF40-AEDB-4BDF-A434-44EEE7AF8D1A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChaseWebServicesFinalProject", "ChaseWebServicesFinalProject\ChaseWebServicesFinalProject\ChaseWebServicesFinalProject.csproj", "{B4526AF8-92E2-4C4D-B962-648FD7D40A13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7CBF9FE1-F5C2-4908-BDF7-52AD8A73839B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4952EF40-AEDB-4BDF-A434-44EEE7AF8D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4952EF40-AEDB-4BDF-A434-44EEE7AF8D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4952EF40-AEDB-4BDF-A434-44EEE7AF8D1A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4952EF40-AEDB-4BDF-A434-44EEE7AF8D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4952EF40-AEDB-4BDF-A434-44EEE7AF8D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4952EF40-AEDB-4BDF-A434-44EEE7AF8D1A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B4526AF8-92E2-4C4D-B962-648FD7D40A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4526AF8-92E2-4C4D-B962-648FD7D40A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4526AF8-92E2-4C4D-B962-648FD7D40A13}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B4526AF8-92E2-4C4D-B962-648FD7D40A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4526AF8-92E2-4C4D-B962-648FD7D40A13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4526AF8-92E2-4C4D-B962-648FD7D40A13}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAE68AB3-D87F-4B81-AB97-E529E0BEDE23}
+	EndGlobalSection
+EndGlobal

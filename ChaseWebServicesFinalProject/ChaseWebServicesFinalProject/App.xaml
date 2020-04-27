@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChaseWebServicesFinalProject.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="LightBG">#faf4ff</Color>
+            <Color x:Key="DarkBG">#10375c</Color>
+            <Color x:Key="TextColor">#844685</Color>
+            <Color x:Key="HighLightColor">#f3c623</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource DarkBG}"/>
+                <Setter Property="BarTextColor" Value="{StaticResource HighLightColor}"/>
+            </Style>
+
+            <Style x:Key="DefaultContentPage" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource LightBG}"/>
+            </Style>
+
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                <Setter Property="Text" Value="{Binding Title}"/>
+            </Style>
+
+            <Style x:Key="DescriptionStyle" TargetType="Label">
+                <Setter Property="Padding" Value="10,0"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="Text" Value="{Binding Description}"/>
+            </Style>
+                        
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

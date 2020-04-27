@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ChaseWebServicesFinalProject.ViewModels"
+             mc:Ignorable="d"                          
+             x:Class="ChaseWebServicesFinalProject.Pages.TopHeadlinesPage"
+             Title="Top Headlines (JSON)">
+
+    <ContentPage.BindingContext>
+        <local:TopHeadlinesVM/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="AuthorStyle" TargetType="Label">
+                <Setter Property="Padding" Value="10,0"/>
+                <Setter Property="FontSize" Value="Small"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ListView ItemsSource="{Binding TopHeadlines}"
+              HasUnevenRows="True"
+              SelectionMode="None">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding title}" Style="{StaticResource TitleStyle}"/>
+                        <Label Text="{Binding description}" Style="{StaticResource DescriptionStyle}"/>
+                        <Label Text="{Binding author}" Style="{StaticResource AuthorStyle}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

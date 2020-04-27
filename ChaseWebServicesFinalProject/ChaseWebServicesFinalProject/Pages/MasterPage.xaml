@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"                      
+             xmlns:local_pages="clr-namespace:ChaseWebServicesFinalProject.Pages"
+             xmlns:local_master_items="clr-namespace:ChaseWebServicesFinalProject.Pages.NavItems"
+             mc:Ignorable="d"
+             x:Class="ChaseWebServicesFinalProject.Pages.MasterPage"
+             Title="MasterPage">
+
+    <!-- This is the content for the drawer nav -->
+    <StackLayout BackgroundColor="{StaticResource DarkBG}">
+
+
+        <!-- Main Navigation from this app, IMPORTANT WE MAKE THE LISTVIEW PUBLIC SO WE CAN ACCESS IT IN THE MAINPAGE -->
+        <ListView x:Name="MasterPageNavListView" 
+                  x:FieldModifier="public" 
+                  Margin="0,100,0,0"                   
+                  SeparatorColor="#21486d">
+            <!-- Our item source is static and therefore we can define the array here of our MasterPageImageItem type -->
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local_master_items:MasterPageItem}">
+                    <local_master_items:MasterPageItem Title="Home" TargetType="{x:Type local_pages:MainPage}"/>
+                    <local_master_items:MasterPageItem Title="Top Headlines"  TargetType="{x:Type local_pages:TopHeadlinesPage}"/>
+                    <local_master_items:MasterPageItem Title="Periodic Table"  TargetType="{x:Type local_pages:PeriodicTablePage}"/>
+                </x:Array>
+            </ListView.ItemsSource>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!-- Cell for the menu items -->
+                    <ViewCell>
+                        <StackLayout Margin="10" Orientation="Horizontal">
+                            <Label Text="{Binding Title}" Margin="15,0,0,0" VerticalOptions="Center" TextColor="White" FontSize="Medium"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

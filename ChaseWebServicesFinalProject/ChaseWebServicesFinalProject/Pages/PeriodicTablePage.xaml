@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ChaseWebServicesFinalProject.ViewModels"
+             mc:Ignorable="d"
+             x:Class="ChaseWebServicesFinalProject.Pages.PeriodicTablePage"
+             Title="Query Periodic Elements">
+
+    <ContentPage.BindingContext>
+        <local:PeriodicTableVM/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ElementHeaderLabelStyle" TargetType="Label">
+                <Setter Property="Grid.ColumnSpan" Value="2"/>
+                <Setter Property="Text" Value="{Binding Name}"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+            </Style>
+
+            <Style x:Key="ElementLabelStyle" TargetType="Label">
+                <Setter Property="Grid.Column" Value="0"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+
+            <Style x:Key="ElementValueStyle" TargetType="Label">
+                <Setter Property="Grid.Column" Value="1"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+
+            <Style x:Key="InputFrame" TargetType="Frame">
+                <Setter Property="Padding" Value="7"/>
+                <Setter Property="CornerRadius" Value="0"/>
+                <Setter Property="Margin" Value="10,2"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout>
+
+        <Frame Style="{StaticResource InputFrame}">
+            <Entry Placeholder="Atomic Number" Text="{Binding AtomicNumberTxt}"/>
+        </Frame>
+        <Frame Style="{StaticResource InputFrame}">
+            <Entry Placeholder="Name" Text="{Binding NameTxt}"/>
+        </Frame>
+        <Frame Style="{StaticResource InputFrame}">
+            <Entry Placeholder="Symbol" Text="{Binding SymbolTxt}"/>
+        </Frame>
+        <Frame Style="{StaticResource InputFrame}">
+            <Entry Placeholder="Year Discovered" Text="{Binding YearDiscoveredTxt}"/>
+        </Frame>
+        
+        <Button Text="Send Query" Command="{Binding GetQueryCMD}" Margin="10,2" BackgroundColor="{StaticResource LightBG}"/>
+
+        <ListView HasUnevenRows="True"
+                  ItemsSource="{Binding QueryResults}"
+                  SeparatorVisibility="None"
+                  SelectionMode="None"
+                  Margin="10,2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Frame Padding="7" Margin="3">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="35"/>
+                                        <RowDefinition Height="20"/>
+                                        <RowDefinition Height="20"/>
+                                        <RowDefinition Height="20"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Item Header -->
+                                    <Label Style="{StaticResource ElementHeaderLabelStyle}"/>
+
+                                    <Label Style="{StaticResource ElementLabelStyle}" Text="Atomic Number:" Grid.Row="1"/>
+                                    <Label Style="{StaticResource ElementValueStyle}" Text="{Binding Atomic_Number}" Grid.Row="1"/>
+
+                                    <Label Style="{StaticResource ElementLabelStyle}" Text="Symbol:" Grid.Row="2"/>
+                                    <Label Style="{StaticResource ElementValueStyle}" Text="{Binding Symbol}" Grid.Row="2"/>
+
+                                    <Label Style="{StaticResource ElementLabelStyle}" Text="Year Discovered:" Grid.Row="3"/>
+                                    <Label Style="{StaticResource ElementValueStyle}" Text="{Binding Year_Discovered}" Grid.Row="3"/>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
